@@ -33,7 +33,7 @@ Route::get('/cart/remove/{productId}', [CartController::class, 'removeFromCart']
 Route::get('/cart/clear', [CartController::class, 'clearCart'])->name('cart.clear');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/checkout/process', [CheckoutController::class, 'processCheckout'])->name('checkout.process');
-Route::get('/generate-qrcode', [PaymentController::class, 'generateQRCode']);
+Route::post('/render-qr', [PaymentController::class, 'renderCreditPayment'])->name('render-qr');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [HomeController::class, 'index'])->name('admin');
 Route::prefix('admin')->name('admin.')->group(function () {

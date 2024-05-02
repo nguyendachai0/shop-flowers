@@ -1,10 +1,8 @@
 @extends('client.layouts.layout')
 @section('content')
-
     <!-- ...:::: Start Checkout Section:::... -->
     <div class="checkout-section">
         <div class="container">
-
             <!-- Start User Details Checkout Form -->
             <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
                 <div class="row">
@@ -68,7 +66,8 @@
                         </form>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                        <form method="POST" action="{{route('render-qr')}}">
+                            @csrf
                             <h3>Hàng hóa bạn mua</h3>
                             <div class="order_table table-responsive">
                                 <table>
@@ -126,7 +125,7 @@
                                 });
                                 </script>
                         </form>
-                        {!! QrCode::size(100)->generate(Request::url()); !!}
+                        
                     </div>
                 </div>
             </div> <!-- Start User Details Checkout Form -->

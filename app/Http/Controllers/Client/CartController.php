@@ -35,22 +35,24 @@ class CartController extends Controller
                 'quantity' => 1,
                 'image' => $product->image,
                 'price' => $product->price,
-
             ];
         }
 
+
         session()->put('cart', $cart);
         session(['total_price' => $this->totalPrice()]);
-
-        return redirect()->route('cart.index')->with('success', 'Product added to cart successfully.');
+        return redirect()->route('home')->with('success', 'Product added to cart successfully.');
     }
 
     public function updateCart(Request $request, $productId)
     {
         $quantity = $request->input('quantity');
-
+        // echo '<pre>';
+        // var_dump($quantity);
+        // echo '</pre>';
+        // die();
         if ($quantity <= 0) {
-            return redirect()->route('cart.index')->with('error', 'Quantity must be greater than zero.');
+            return redirect()->route('home')->with('error', 'Quantity must be greater than zero.');
         }
 
         $cart = session()->get('cart');
@@ -60,7 +62,7 @@ class CartController extends Controller
             session()->put('cart', $cart);
         }
 
-        return redirect()->route('cart.index')->with('success', 'Cart updated successfully.');
+        return redirect()->route('home')->with('success', 'Cart updated successfully.');
     }
 
     public function removeFromCart($productId)

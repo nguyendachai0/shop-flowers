@@ -8,10 +8,10 @@
     <title>HONO - Multi Purpose HTML Template</title>
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
 
-    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
-
+    <link rel="stylesheet" href="{{asset('assets/css/vendor/vendor.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/plugins/plugins.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    @livewireStyles
 </head>
 
 <body>
@@ -28,6 +28,7 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    @livewireScripts
 </body>
 
 

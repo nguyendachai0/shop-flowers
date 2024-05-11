@@ -1,4 +1,4 @@
-   <!-- Start Footer Section -->
+   {{-- <!-- Start Footer Section -->
    <footer class="footer-section footer-bg">
     <div class="footer-wrapper">
         <!-- Start Footer Top -->
@@ -349,4 +349,4 @@
             </div>
         </div>
     </div>
-</div> <!-- End Modal Quickview cart -->
+</div> <!-- End Modal Quickview cart --> --}}

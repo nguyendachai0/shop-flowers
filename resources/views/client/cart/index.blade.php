@@ -16,14 +16,14 @@
                                         <th class="product_remove">Xóa</th>
                                         <th class="product_thumb">Ảnh</th>
                                         <th class="product_name">Tên</th>
-                                        <th class="product-price">Giả</th>
+                                        <th class="product-price">Giá</th>
                                         <th class="product_quantity">Số lượng</th>
                                         <th class="product_total">Tổng phụ</th>
                                     </tr>
                                 </thead> <!-- End Cart Table Head -->
                                 <tbody>
                                     <!-- Start Cart Single Item-->
-                                    @foreach(session('cart', []) as $item)
+                                    @foreach(session('cart', []) as $key => $item)
                                     <tr>
                                         <td class="product_remove"><a href="#"><i class="fa fa-trash-o"></i></a>
                                         </td>
@@ -36,9 +36,11 @@
                                             <a href="product-details-default.html">{{ $item['name'] }}</a>
                                         </td>
                                         <td class="product_price">{{ $item['price'] }} VND</td>
-                                        <td class="product_quantity">
-                                          
-                                            <input min="1" max="100" value="{{ $item['quantity'] }}" type="number">
+                                        <td class="product_quantity">    
+                                            @php 
+                                            $product = \App\Models\Product::find($key);
+                                            @endphp
+                                            <livewire:quantity-updater :product="$product" :initialQuantity="$item['quantity']" />
                                         </td>
                                         <td>{{ $item['price'] * $item['quantity'] }} VND</td>
                                     </tr> <!-- End Cart Single Item-->
@@ -83,6 +85,6 @@
                 </div>
             </div>
         </div>
-    </div> <!-- End Coupon Start -->
-</div> <!-- ...:::: End Cart Section:::... -->
+    </div> <!-- End Coupon Area -->
+</div> <!-- End Cart Section -->
 @endsection

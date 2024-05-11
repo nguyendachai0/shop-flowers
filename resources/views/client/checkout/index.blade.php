@@ -6,51 +6,36 @@
             <!-- Start User Details Checkout Form -->
             <div class="checkout_form" data-aos="fade-up" data-aos-delay="400">
                 <div class="row">
+                    <form class="d-flex justify-content-between" method="POST" action="{{route('render-qr')}}">
+                        @csrf
                     <div class="col-lg-6 col-md-6">
-                        <form action="#">
+                       
                             <h3>Thông tin khách hàng</h3>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>Họ và tên <span>*</span></label>
-                                        <input type="text" name="name">
+                                        <input type="text" name="name" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="default-form-box">
                                         <label>Email <span>*</span></label>
-                                        <input type="email" name="email">
+                                        <input type="email" name="email" required>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Số điện thoại <span>*</span></label>
-                                        <input type="text" name="phone">
+                                        <input type="text" name="phone" required>
                                     </div>
                                 </div>
                               
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>Thành phố/tỉnh <span>*</span></label>
-                                        <input  type="text" name="city">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>Quận huyện <span>*</span></label>
-                                        <input type="text" name="district">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="default-form-box">
-                                        <label>Phường/Xã<span>*</span></label>
-                                        <input type="text" name="commune">
-                                    </div>
-                                </div>
+                              
                                 <div class="col-12">
                                     <div class="default-form-box">
                                         <label>Địa chỉ cho nhân viên giao hàng<span>*</span></label>
-                                        <input type="text" name="address">
+                                        <input type="text" name="address" required>
                                     </div>
                                 </div>
                                
@@ -63,11 +48,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                       
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <form method="POST" action="{{route('render-qr')}}">
-                            @csrf
+                    <div class="col-lg-5 col-md-5">
+                    
                             <h3>Hàng hóa bạn mua</h3>
                             <div class="order_table table-responsive">
                                 <table>
@@ -88,7 +72,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>Tổng giá tiền phải thanh toán (đã bao gồm phí vận chuyển)</th>
-                                            <td>{{session('total_price') + 10000 ?? 0}} VND</td>
+                                            <td><input type="number" name="total_price" value="{{session('total_price') + 10000 ?? 0}}""> VND</td>
                                         </tr>
                                        
                                     </tfoot>
@@ -124,9 +108,10 @@
                                     });
                                 });
                                 </script>
-                        </form>
+                        
                         
                     </div>
+                </form>
                 </div>
             </div> <!-- Start User Details Checkout Form -->
         </div>

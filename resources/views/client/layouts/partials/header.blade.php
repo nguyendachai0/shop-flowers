@@ -17,8 +17,8 @@
                         <div
                             class="header-top-user-link header-top-user-link-color--white header-top-user-link-hover-color--green">
                           
-                            <a href="cart.html">Cart</a>
-                            <a href="checkout.html">Checkout</a>
+                            <a href="{{route('cart.index')}}">Cart</a>
+                            <a href="{{route('checkout.index')}}">Checkout</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <!-- Start Header Logo -->
                         <div class="header-logo">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/images/logo/logo_black.png" alt=""></a>
+                                <a href="{{route('home')}}"><img src="assets/images/logo/logo_black.png" alt=""></a>
                             </div>
                         </div>
                         <!-- End Header Logo -->
@@ -83,7 +83,7 @@
                 <div class="mobile-header-left">
                     <ul class="mobile-menu-logo">
                         <li>
-                            <a href="index.html">
+                            <a href="{{route('home')}}">
                                 <div class="logo">
                                     <img src="assets/images/logo/logo_black.png" alt="">
                                 </div>
@@ -145,7 +145,7 @@
         <!-- Start Mobile contact Info -->
         <div class="mobile-contact-info">
             <div class="logo">
-                <a href="index.html"><img src="assets/images/logo/logo_white.png" alt=""></a>
+                <a href="route{{'home'}}"><img src="assets/images/logo/logo_white.png" alt=""></a>
             </div>
 
             <address class="address">
@@ -163,8 +163,8 @@
 
             <ul class="user-link">
                 
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="{{route('cart.index')}}">Cart</a></li>
+                <li><a href="{{route('checkout.index')}}">Checkout</a></li>
             </ul>
         </div>
         <!-- End Mobile contact Info -->
@@ -182,7 +182,7 @@
     <!-- Start Mobile contact Info -->
     <div class="mobile-contact-info">
         <div class="logo">
-            <a href="index.html"><img src="assets/images/logo/logo_white.png" alt=""></a>
+            <a href="{{route('home')}}"><img src="assets/images/logo/logo_white.png" alt=""></a>
         </div>
 
         <address class="address">
@@ -200,8 +200,8 @@
 
         <ul class="user-link">
          
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="{{route('cart.index')}}">Cart</a></li>
+            <li><a href="{{route('checkout.index')}}">Checkout</a></li>
         </ul>
     </div>
     <!-- End Mobile contact Info -->
@@ -229,6 +229,7 @@
                         <a href="#" class="offcanvas-cart-item-link">{{$item['name']}}</a>
                         <div class="offcanvas-cart-item-details">
                             <span class="offcanvas-cart-item-details-quantity">{{$item['quantity']}}</span>
+                            x
                             <span class="offcanvas-cart-item-details-price">{{$item['price']}}</span>
                         </div>
                     </div>
@@ -246,8 +247,8 @@
             </span>
         </div>
         <ul class="offcanvas-cart-action-button">
-            <li><a href="cart.html" class="btn btn-block btn-green">View Cart</a></li>
-            <li><a href="compare.html" class=" btn btn-block btn-green mt-5">Checkout</a></li>
+            <li><a href="{{route('cart.index')}}" class="btn btn-block btn-green">View Cart</a></li>
+            <li><a href="{{route('checkout.index')}}" class=" btn btn-block btn-green mt-5">Checkout</a></li>
         </ul>
     </div> <!-- End  Offcanvas Addcart Wrapper -->
 

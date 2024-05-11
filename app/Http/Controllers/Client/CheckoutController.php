@@ -15,6 +15,7 @@ class CheckoutController extends Controller
     public function processCheckout(Request $request)
     {
         $validated = $request->validate([]);
+        dd($validated);
         $order = new Order();
         $order->save();
         session()->forget('cart');
